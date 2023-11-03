@@ -1,4 +1,4 @@
-name: Terraform VPC
+name: Create VPC Endpoint Infra
 
 on:
   workflow_dispatch:
