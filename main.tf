@@ -25,7 +25,7 @@ resource "aws_vpc_endpoint" "vpc_ecr_dkr" {
     var.subnet_a,
     var.subnet_b
   ]
-  security_group_ids = [var.security_group_id]
+  security_group_ids = [var.sg_cluster_ecs]
 
   tags = {
     Name  = "endpoint-ecr-dkr"
@@ -44,7 +44,7 @@ resource "aws_vpc_endpoint" "vpc_ecr_api" {
     var.subnet_a,
     var.subnet_b
   ]
-  security_group_ids = [var.security_group_id]
+  security_group_ids = [var.sg_cluster_ecs]
 
   tags = {
     Name  = "endpoint-ecr-api"

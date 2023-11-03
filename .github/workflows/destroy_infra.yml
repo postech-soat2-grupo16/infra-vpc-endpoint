@@ -26,3 +26,10 @@ jobs:
 
       - name: Terraform Destroy
         run:  terraform destroy -auto-approve
+        env:
+          TF_VAR_vpc_id: ${{ vars.VPC_ID }}
+          TF_VAR_subnet_a: ${{ vars.SUBNET_A }}
+          TF_VAR_subnet_b: ${{ vars.SUBNET_B }}
+          TF_VAR_sg_cluster_ecs: ${{ vars.SG_CLUSTER_ECS }}
+          TF_VAR_rt_subnet_a: ${{ vars.RT_SUBNET_A }}
+          TF_VAR_rt_subnet_b: ${{ vars.RT_SUBNET_B }}
