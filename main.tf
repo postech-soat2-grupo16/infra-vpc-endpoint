@@ -130,7 +130,7 @@ resource "aws_vpc_endpoint" "vpc_sm" {
 }
 
 #DynamoDB
-resource "aws_vpc_endpoint" "vpc_s3_gtw" {
+resource "aws_vpc_endpoint" "vpc_dynamodb_gtw" {
   service_name      = "com.amazonaws.us-east-1.dynamodb"
   vpc_endpoint_type = "Gateway"
 
