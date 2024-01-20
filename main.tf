@@ -128,3 +128,18 @@ resource "aws_vpc_endpoint" "vpc_sm" {
     infra = "vpc-endpoint-sm"
   }  
 }
+
+#DynamoDB
+resource "aws_vpc_endpoint" "vpc_s3_gtw" {
+  service_name      = "com.amazonaws.us-east-1.dynamodb"
+  vpc_endpoint_type = "Gateway"
+
+  vpc_id = var.vpc_id
+
+  route_table_ids = [var.rt_subnet_a, var.rt_subnet_b]
+
+  tags = {
+    Name  = "endpoint-dynamodb"
+    infra = "vpc-endpoint-dynamodb"
+  }
+}

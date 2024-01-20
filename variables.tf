@@ -5,30 +5,30 @@ variable "aws_region" {
 
 variable "vpc_id" { 
   type = string
-  default = "value"
+  default = "vpc-02704242632eb2597"
 }
 
 variable "subnet_a" { 
     type = string
-    default = "value"
+    default = "subnet-0c485509fe2864438"
 }
 
 variable "subnet_b" { 
     type = string
-    default = "value"
+    default = "subnet-000064d84790b3f77"
 }
 
 variable "sg_cluster_ecs" { 
     type = string
-    default = "value"
+    default = "sg-07044c0bf87d90c71"
 }
 
 variable "rt_subnet_a" { 
     type = string
-    default = "value"
+    default = "rtb-0ab7900da999cac96"
 }
 
 variable "rt_subnet_b" { 
     type = string
-    default = "value"
+    default = "rtb-0f0539661cf658c7f"
 }
