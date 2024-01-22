@@ -143,3 +143,23 @@ resource "aws_vpc_endpoint" "vpc_dynamodb_gtw" {
     infra = "vpc-endpoint-dynamodb"
   }
 }
+
+#SQS
+resource "aws_vpc_endpoint" "endpoint_sqs" {
+  service_name = "com.amazonaws.us-east-1.sqs"
+  vpc_endpoint_type = "Interface"
+  private_dns_enabled = true
+  ip_address_type = "ipv4"
+
+  vpc_id = var.vpc_id
+  subnet_ids = [
+    var.subnet_a,
+    var.subnet_b
+  ]
+  security_group_ids = [var.sg_cluster_ecs]
+
+  tags = {
+    Name  = "endpoint-sqs"
+    infra = "vpc-endpoint-sqs"
+  }  
+}
