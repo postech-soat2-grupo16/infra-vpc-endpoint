@@ -32,3 +32,8 @@ variable "rt_subnet_b" {
     type = string
     default = "rtb-0f0539661cf658c7f"
 }
+
+variable "sg_cluster_alb" { 
+    type = string
+    default = "sg-0984492cc7da3f5da"
+}

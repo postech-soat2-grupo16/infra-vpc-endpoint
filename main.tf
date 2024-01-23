@@ -163,3 +163,23 @@ resource "aws_vpc_endpoint" "endpoint_sqs" {
     infra = "vpc-endpoint-sqs"
   }  
 }
+
+#ALB
+resource "aws_vpc_endpoint" "endpoint_alb" {
+  service_name = "com.amazonaws.us-east-1.elasticloadbalancing"
+  vpc_endpoint_type = "Interface"
+  private_dns_enabled = true
+  ip_address_type = "ipv4"
+
+  vpc_id = var.vpc_id
+  subnet_ids = [
+    var.subnet_a,
+    var.subnet_b
+  ]
+  security_group_ids = [var.sg_cluster_alb]
+
+  tags = {
+    Name  = "endpoint-alb"
+    infra = "vpc-endpoint-alb"
+  }  
+}
